@@ -10,7 +10,6 @@ using WebMain.Core;
 
 namespace WebMain
 {
-
     [TestFixture]
     [Category("Unit")]
     public class LogInTest
