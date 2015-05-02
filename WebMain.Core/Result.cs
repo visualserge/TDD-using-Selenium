@@ -7,8 +7,15 @@ namespace WebMain.Core
 {
     public class Result
     {
-        public int code { get; set; }
+        public MessageCode code { get; set; }
 
         public bool issuccess { get; set; }
+    }
+
+    public enum MessageCode
+    {
+        Success = 0,
+        WrongUserNamePassword = 1,
+        BlankUserNamePassword = 2
     }
 }
