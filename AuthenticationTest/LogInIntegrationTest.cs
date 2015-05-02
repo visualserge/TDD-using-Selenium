@@ -47,5 +47,22 @@ namespace WebMain
             Thread.Sleep(1000);
             Assert.That(Driver.FindElement(By.Id("lblMessage")).Text, Is.EqualTo("Cannot logged in"));
         }
+
+        [Test]
+        public void UserName_and_Password_mustnotbe_emptied()
+        {
+            //Arrange
+            Driver.Navigate().GoToUrl("http://localhost:16576/LogIn");
+
+            //Act
+            Thread.Sleep(1000);
+            Driver.FindElement(By.Id("txtUserName")).SendKeys("");
+            Driver.FindElement(By.Id("txtPassword")).SendKeys("");
+            Driver.FindElement(By.Id("btnOK")).Click();
+
+            //Assert
+            Thread.Sleep(1000);
+            Assert.That(Driver.FindElement(By.Id("lblMessage")).Text, Is.EqualTo("UserName and Password must be entered"));
+        }
     }
 }
