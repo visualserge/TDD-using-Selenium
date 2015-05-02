@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticationTest", "AuthenticationTest\AuthenticationTest.csproj", "{AA2B258F-B677-4B4A-A381-076E6E7864C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMain", "WebMain\WebMain.csproj", "{B48E95E7-A00A-4861-A75E-E86F066349DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMain.Core", "WebMain.Core\WebMain.Core.csproj", "{903DF0D2-6CD0-48F4-B60E-B642D3F1E24D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA2B258F-B677-4B4A-A381-076E6E7864C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA2B258F-B677-4B4A-A381-076E6E7864C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA2B258F-B677-4B4A-A381-076E6E7864C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA2B258F-B677-4B4A-A381-076E6E7864C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B48E95E7-A00A-4861-A75E-E86F066349DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B48E95E7-A00A-4861-A75E-E86F066349DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B48E95E7-A00A-4861-A75E-E86F066349DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B48E95E7-A00A-4861-A75E-E86F066349DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{903DF0D2-6CD0-48F4-B60E-B642D3F1E24D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{903DF0D2-6CD0-48F4-B60E-B642D3F1E24D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{903DF0D2-6CD0-48F4-B60E-B642D3F1E24D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{903DF0D2-6CD0-48F4-B60E-B642D3F1E24D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
