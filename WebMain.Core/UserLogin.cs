@@ -7,21 +7,45 @@ namespace WebMain.Core
 {
     public class UserLogin
     {
-        public bool LogIn(string username, string password)
+        public Result LogIn(string username, string password)
         {
             if (username.Equals("admin") && password.Equals("admin"))
             {
-                return true;
+                return new Result() { issuccess = true, code = 0 };
+            }
+            else if (username.Equals("") && password.Equals(""))
+            {
+                return new Result() { issuccess = false, code = 1 };
             }
             else
             {
-                return false;
+                return new Result() { issuccess = false, code = 2 };
             }
         }
 
-        public string ShowMessage(bool result)
+        public string ShowMessage(Result result)
         {
-            return result ? "Successfully logged in" : "Cannot logged in";
+            string message = string.Empty;
+
+            switch (result.code)
+            {
+                case 0:
+                    message = "Successfully logged in";
+                    break;
+
+                case 1 :
+                    message = "UserName and Password must be entered";
+                    break;
+
+                case 2 :
+                    message = "Cannot logged in";
+                    break;
+
+                default:
+                    break;
+            }
+
+            return message;
         }
     }
 }
