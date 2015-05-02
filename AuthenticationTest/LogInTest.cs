@@ -38,7 +38,7 @@ namespace WebMain
 
             //Act
             result = obj.LogIn("admin", "admin");
-            _message = obj.ShowMessage(result);
+            _message = obj.ShowMessage(result.code);
 
             //Assert
             Assert.AreEqual("Successfully logged in", _message);
@@ -54,7 +54,7 @@ namespace WebMain
 
             //Act
             result = obj.LogIn("admin","wrongpassword");
-            _message = obj.ShowMessage(result);
+            _message = obj.ShowMessage(result.code);
 
             //Assert
             Assert.AreEqual("Cannot logged in", _message);
@@ -70,10 +70,24 @@ namespace WebMain
            
             //Act
             result = obj.LogIn("","");
-            _message = obj.ShowMessage(result);
+            _message = obj.ShowMessage(result.code);
 
             //Assert
             Assert.AreEqual("UserName and Password must be entered", _message);
+        }
+
+        [Test]
+        public void MessageCode_is_Introduce()
+        { 
+            //Arrange
+            UserLogin obj = new UserLogin();
+            Result result = new Result();
+
+            //Act
+            result = obj.LogIn("admin","admin");
+
+            //Assert
+            Assert.AreEqual(MessageCode.Success, result.code);
         }
     }
 }
