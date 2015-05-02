@@ -19,13 +19,13 @@ namespace WebMain
         {
             //Arrange
             UserLogin obj = new UserLogin();
-            bool result = false;
+            Result result = new Result();
 
             //Act
             result = obj.LogIn("admin", "admin");
 
             //Assert
-            Assert.AreEqual(true, result);
+            Assert.AreEqual(true, result.issuccess);
         }
 
         [Test]
@@ -33,7 +33,7 @@ namespace WebMain
         { 
             //Arrange
             UserLogin obj = new UserLogin();
-            bool result = false;
+            Result result = new Result();
             string _message = string.Empty;
 
             //Act
@@ -49,7 +49,7 @@ namespace WebMain
         { 
             //Arrange
             UserLogin obj = new UserLogin();
-            bool result = false;
+            Result result = new Result();
             string _message = string.Empty;
 
             //Act
@@ -58,6 +58,22 @@ namespace WebMain
 
             //Assert
             Assert.AreEqual("Cannot logged in", _message);
-        }    
+        }
+
+        [Test]
+        public void Login_Can_ReturnMessageCode()
+        {
+            //Arrange
+            UserLogin obj = new UserLogin();
+            Result result = new Result();
+            string _message = string.Empty;
+           
+            //Act
+            result = obj.LogIn("","");
+            _message = obj.ShowMessage(result);
+
+            //Assert
+            Assert.AreEqual("UserName and Password must be entered", _message);
+        }
     }
 }
