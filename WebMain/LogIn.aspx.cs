@@ -20,9 +20,9 @@ namespace WebMain
         {
             UserLogin obj = new UserLogin();
 
-            bool result = obj.LogIn(txtUserName.Text, txtPassword.Text);
+            Result result = obj.LogIn(txtUserName.Text, txtPassword.Text);
 
-            if (result)
+            if (result.issuccess)
             {
                 lblMessage.Text = obj.ShowMessage(result);
             }
