@@ -35,11 +35,11 @@ namespace WebMain.Core
             }
         }
 
-        public string ShowMessage(MessageCode result)
+        public string ShowMessage(MessageCode code)
         {
             string message = string.Empty;
 
-            switch (result)
+            switch (code)
             {
                 case MessageCode.Success:
                     message = "Successfully logged in";
