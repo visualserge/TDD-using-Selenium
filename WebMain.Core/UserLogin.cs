@@ -11,33 +11,45 @@ namespace WebMain.Core
         {
             if (username.Equals("admin") && password.Equals("admin"))
             {
-                return new Result() { issuccess = true, code = 0 };
+                return new Result() 
+                { 
+                    issuccess = true, 
+                    code = MessageCode.Success 
+                };
             }
             else if (username.Equals("") && password.Equals(""))
             {
-                return new Result() { issuccess = false, code = 1 };
+                return new Result() 
+                {                  
+                    issuccess = false, 
+                    code = MessageCode.BlankUserNamePassword 
+                };
             }
             else
             {
-                return new Result() { issuccess = false, code = 2 };
+                return new Result() 
+                { 
+                    issuccess = false, 
+                    code = MessageCode.WrongUserNamePassword 
+                };
             }
         }
 
-        public string ShowMessage(Result result)
+        public string ShowMessage(MessageCode result)
         {
             string message = string.Empty;
 
-            switch (result.code)
+            switch (result)
             {
-                case 0:
+                case MessageCode.Success:
                     message = "Successfully logged in";
                     break;
 
-                case 1 :
+                case MessageCode.BlankUserNamePassword :
                     message = "UserName and Password must be entered";
                     break;
 
-                case 2 :
+                case MessageCode.WrongUserNamePassword :
                     message = "Cannot logged in";
                     break;
 
