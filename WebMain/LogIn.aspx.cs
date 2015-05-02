@@ -24,11 +24,11 @@ namespace WebMain
 
             if (result.issuccess)
             {
-                lblMessage.Text = obj.ShowMessage(result);
+                lblMessage.Text = obj.ShowMessage(result.code);
             }
             else
             {
-                lblMessage.Text = obj.ShowMessage(result);
+                lblMessage.Text = obj.ShowMessage(result.code);
             }
         }
     }
