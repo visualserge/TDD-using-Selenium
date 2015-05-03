@@ -72,7 +72,7 @@ namespace WebMain
             var result = obj.LogIn("admin", "admin");
 
             //Assert
-            Assert.AreEqual(MessageCode.Success, result.Code);
+            Assert.AreEqual(0, result.Code);
         }
     }
 }
