@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
 using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
 namespace WebMain
@@ -36,13 +32,13 @@ namespace WebMain
             }
         }
 
-        private ChromeDriver LaunchChrome()
+        private static ChromeDriver LaunchChrome()
         {
             // Disable the remember password popups, and make sure it's full screen so that Bootstrap elements aren't hidden
-            ChromeOptions options = new ChromeOptions();
+            var options = new ChromeOptions();
             options.AddArgument("--incognito");
             options.AddArgument("--start-maximized");
-            ChromeDriver chromeDriver = new ChromeDriver(options);
+            var chromeDriver = new ChromeDriver(options);
             chromeDriver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(2));
 
             return chromeDriver;

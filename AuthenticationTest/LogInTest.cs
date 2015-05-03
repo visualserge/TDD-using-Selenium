@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using System.Threading;
+﻿using NUnit.Framework;
 using WebMain.Core;
 
 namespace WebMain
@@ -18,76 +11,68 @@ namespace WebMain
         public void A_User_Can_LogIn_Successfully()
         {
             //Arrange
-            UserLogin obj = new UserLogin();
-            Result result = new Result();
+            var obj = new UserLogin();
 
             //Act
-            result = obj.LogIn("admin", "admin");
+            var result = obj.LogIn("admin", "admin");
 
             //Assert
-            Assert.AreEqual(true, result.issuccess);
+            Assert.AreEqual(true, result.Issuccess);
         }
 
         [Test]
         public void Show_SuccessMessage_AfterLogin()
         { 
             //Arrange
-            UserLogin obj = new UserLogin();
-            Result result = new Result();
-            string _message = string.Empty;
+            var obj = new UserLogin();
 
             //Act
-            result = obj.LogIn("admin", "admin");
-            _message = obj.ShowMessage(result.code);
+            var result = obj.LogIn("admin", "admin");
+            var message = obj.ShowMessage(result.Code);
 
             //Assert
-            Assert.AreEqual("Successfully logged in", _message);
+            Assert.AreEqual("Successfully logged in", message);
         }
 
         [Test]
         public void Show_NotSuccessMessage_AfterLogIn()
         { 
             //Arrange
-            UserLogin obj = new UserLogin();
-            Result result = new Result();
-            string _message = string.Empty;
+            var obj = new UserLogin();
 
             //Act
-            result = obj.LogIn("admin","wrongpassword");
-            _message = obj.ShowMessage(result.code);
+            var result = obj.LogIn("admin","wrongpassword");
+            var message = obj.ShowMessage(result.Code);
 
             //Assert
-            Assert.AreEqual("Cannot logged in", _message);
+            Assert.AreEqual("Cannot logged in", message);
         }
 
         [Test]
         public void Login_Can_ReturnMessageCode()
         {
             //Arrange
-            UserLogin obj = new UserLogin();
-            Result result = new Result();
-            string _message = string.Empty;
-           
+            var obj = new UserLogin();
+
             //Act
-            result = obj.LogIn("","");
-            _message = obj.ShowMessage(result.code);
+            var result = obj.LogIn("","");
+            var message = obj.ShowMessage(result.Code);
 
             //Assert
-            Assert.AreEqual("UserName and Password must be entered", _message);
+            Assert.AreEqual("UserName and Password must be entered", message);
         }
 
         [Test]
         public void MessageCode_is_Introduce()
         { 
             //Arrange
-            UserLogin obj = new UserLogin();
-            Result result = new Result();
+            var obj = new UserLogin();
 
             //Act
-            result = obj.LogIn("admin","admin");
+            var result = obj.LogIn("admin","admin");
 
             //Assert
-            Assert.AreEqual(MessageCode.Success, result.code);
+            Assert.AreEqual(MessageCode.Success, result.Code);
         }
     }
 }

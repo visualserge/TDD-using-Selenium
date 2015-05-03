@@ -1,18 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\Users\Delos Santos Family\Documents\Visual Studio 2013\Projects\AuthenticationTest\AuthenticationTest\bin\Debug\AuthenticationTest.dll" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-05-02" time="08:47:13">
+<test-results name="C:\Users\Delos Santos Family\Documents\Visual Studio 2013\Projects\AuthenticationTest\AuthenticationTest\bin\Debug\AuthenticationTest.dll" total="3" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2015-05-03" time="08:40:05">
   <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.8009" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.4\bin" machine-name="DELOSSANTOSPC" user="Delos Santos Family" user-domain="DELOSSANTOSPC" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Assembly" name="C:\Users\Delos Santos Family\Documents\Visual Studio 2013\Projects\AuthenticationTest\AuthenticationTest\bin\Debug\AuthenticationTest.dll" executed="True" result="Success" success="True" time="42.735" asserts="0">
+  <test-suite type="Assembly" name="C:\Users\Delos Santos Family\Documents\Visual Studio 2013\Projects\AuthenticationTest\AuthenticationTest\bin\Debug\AuthenticationTest.dll" executed="True" result="Success" success="True" time="42.409" asserts="0">
     <results>
-      <test-suite type="SetUpFixture" name="WebMain" executed="True" result="Success" success="True" time="42.666" asserts="0">
+      <test-suite type="SetUpFixture" name="WebMain" executed="True" result="Success" success="True" time="42.350" asserts="0">
         <results>
-          <test-suite type="TestFixture" name="LogInIntegrationTest" executed="True" result="Success" success="True" time="31.429" asserts="0">
+          <test-suite type="TestFixture" name="LogInIntegrationTest" executed="True" result="Success" success="True" time="30.702" asserts="0">
             <categories>
               <category name="Integration" />
             </categories>
             <results>
-              <test-case name="WebMain.LogInIntegrationTest.A_User_Can_LogIn_In_Page_Successfully" executed="True" result="Success" success="True" time="31.393" asserts="1" />
+              <test-case name="WebMain.LogInIntegrationTest.A_User_Can_LogIn_In_Page_Successfully" executed="True" result="Success" success="True" time="25.922" asserts="1" />
+              <test-case name="WebMain.LogInIntegrationTest.A_User_TriedTo_LogIn_In_Page_But_UnSuccessfully" executed="True" result="Success" success="True" time="2.356" asserts="1" />
+              <test-case name="WebMain.LogInIntegrationTest.UserName_and_Password_mustnotbe_emptied" executed="True" result="Success" success="True" time="2.351" asserts="1" />
             </results>
           </test-suite>
         </results>

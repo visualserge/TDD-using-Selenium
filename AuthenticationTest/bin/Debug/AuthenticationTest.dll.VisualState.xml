@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
-  <TopNode>[0-1008]C:\Users\Delos Santos Family\Documents\Visual Studio 2013\Projects\AuthenticationTest\AuthenticationTest\bin\Debug\AuthenticationTest.dll</TopNode>
-  <SelectedNode>[0-1008]C:\Users\Delos Santos Family\Documents\Visual Studio 2013\Projects\AuthenticationTest\AuthenticationTest\bin\Debug\AuthenticationTest.dll</SelectedNode>
+  <TopNode>[0-1011]C:\Users\Delos Santos Family\Documents\Visual Studio 2013\Projects\AuthenticationTest\AuthenticationTest\bin\Debug\AuthenticationTest.dll</TopNode>
+  <SelectedNode>[0-1001]WebMain.LogInIntegrationTest</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
-    <Node UniqueName="[0-1008]C:\Users\Delos Santos Family\Documents\Visual Studio 2013\Projects\AuthenticationTest\AuthenticationTest\bin\Debug\AuthenticationTest.dll" Expanded="true" />
+    <Node UniqueName="[0-1011]C:\Users\Delos Santos Family\Documents\Visual Studio 2013\Projects\AuthenticationTest\AuthenticationTest\bin\Debug\AuthenticationTest.dll" Expanded="true" />
     <Node UniqueName="[0-1000]WebMain.AcceptanceTestBase" Expanded="true" />
     <Node UniqueName="[0-1001]WebMain.LogInIntegrationTest" Expanded="true" />
-    <Node UniqueName="[0-1004]WebMain.LogInTest" Expanded="true" />
+    <Node UniqueName="[0-1005]WebMain.LogInTest" Expanded="true" />
   </Nodes>
 </VisualState>

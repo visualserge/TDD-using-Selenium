@@ -1,27 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WebMain
 {
     public class IISExpress : IDisposable
     {
-        private ProcessStartInfo _startInfo;
+        private readonly ProcessStartInfo _startInfo;
         public Process IisProcess { get; private set; }
 
         public IISExpress()
         {
-            string sitePath = @"C:\Users\Delos Santos Family\Documents\visual studio 2013\Projects\AuthenticationTest\WebMain";
-            _startInfo = new ProcessStartInfo();
-            _startInfo.Arguments = string.Format("/path:\"{0}\" /port:{1}", sitePath, 16576);
+            const string sitePath = @"C:\Users\Delos Santos Family\Documents\visual studio 2013\Projects\AuthenticationTest\WebMain";
+            _startInfo = new ProcessStartInfo {Arguments = string.Format("/path:\"{0}\" /port:{1}", sitePath, 16576)};
 
-            string programFiles = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
-            string searchPath1 = string.Format(@"{0}\IIS Express\iisexpress.exe", programFiles);
-            string searchPath2 = "";
+            var programFiles = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles);
+            var searchPath1 = string.Format(@"{0}\IIS Express\iisexpress.exe", programFiles);
+            var searchPath2 = "";
             _startInfo.FileName = string.Format(@"{0}\IIS Express\iisexpress.exe", programFiles);
 
             if (!File.Exists(_startInfo.FileName))
@@ -48,19 +43,20 @@ namespace WebMain
             }
             catch
             {
-                IisProcess.CloseMainWindow();
-                IisProcess.Dispose();
+                if (IisProcess != null)
+                {
+                    IisProcess.CloseMainWindow();
+                    IisProcess.Dispose();
+                }
             }
         }
 
         public void Dispose()
         {
-            if (IisProcess != null && !IisProcess.HasExited)
-            {
-                IisProcess.CloseMainWindow();
-                IisProcess.Dispose();
-                Console.WriteLine("Killed IISExpress");
-            }
+            if (IisProcess == null || IisProcess.HasExited) return;
+            IisProcess.CloseMainWindow();
+            IisProcess.Dispose();
+            Console.WriteLine("Killed IISExpress");
         }
 
 
