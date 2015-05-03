@@ -29,9 +29,9 @@
             {
                 case MessageCode.Success:
                     return "Successfully logged in";
-                case MessageCode.BlankUserNamePassword :
+                case MessageCode.BlankUserNamePassword:
                     return "UserName and Password must be entered";
-                case MessageCode.WrongUserNamePassword :
+                case MessageCode.WrongUserNamePassword:
                     return "Cannot logged in";
             }
 
