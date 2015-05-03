@@ -22,7 +22,7 @@ namespace WebMain
 
         [Test]
         public void Show_SuccessMessage_AfterLogin()
-        { 
+        {
             //Arrange
             var obj = new UserLogin();
 
@@ -36,12 +36,12 @@ namespace WebMain
 
         [Test]
         public void Show_NotSuccessMessage_AfterLogIn()
-        { 
+        {
             //Arrange
             var obj = new UserLogin();
 
             //Act
-            var result = obj.LogIn("admin","wrongpassword");
+            var result = obj.LogIn("admin", "wrongpassword");
             var message = obj.ShowMessage(result.Code);
 
             //Assert
@@ -55,7 +55,7 @@ namespace WebMain
             var obj = new UserLogin();
 
             //Act
-            var result = obj.LogIn("","");
+            var result = obj.LogIn("", "");
             var message = obj.ShowMessage(result.Code);
 
             //Assert
@@ -64,12 +64,12 @@ namespace WebMain
 
         [Test]
         public void MessageCode_is_Introduce()
-        { 
+        {
             //Arrange
             var obj = new UserLogin();
 
             //Act
-            var result = obj.LogIn("admin","admin");
+            var result = obj.LogIn("admin", "admin");
 
             //Assert
             Assert.AreEqual(MessageCode.Success, result.Code);

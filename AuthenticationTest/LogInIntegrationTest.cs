@@ -59,7 +59,8 @@ namespace WebMain
 
             //Assert
             Thread.Sleep(1000);
-            Assert.That(Driver.FindElement(By.Id("lblMessage")).Text, Is.EqualTo("UserName and Password must be entered"));
+            Assert.That(Driver.FindElement(By.Id("lblMessage")).Text,
+                Is.EqualTo("UserName and Password must be entered"));
         }
     }
 }

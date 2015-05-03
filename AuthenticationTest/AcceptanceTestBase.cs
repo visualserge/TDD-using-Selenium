@@ -8,8 +8,8 @@ namespace WebMain
     [SetUpFixture]
     public class AcceptanceTestBase
     {
-        public static IWebDriver Driver { get; private set; }
         private IISExpress _iisExpress;
+        public static IWebDriver Driver { get; private set; }
 
         [SetUp]
         public void SetUp()
@@ -19,7 +19,6 @@ namespace WebMain
 
             Driver = LaunchChrome();
         }
-
 
         [TearDown]
         public void TearDown()
