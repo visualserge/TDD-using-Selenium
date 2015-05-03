@@ -1,63 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace WebMain.Core
+﻿namespace WebMain.Core
 {
     public class UserLogin
     {
         public Result LogIn(string username, string password)
         {
-            if (username.Equals("admin") && password.Equals("admin"))
-            {
-                return new Result() 
-                { 
-                    issuccess = true, 
-                    code = MessageCode.Success 
-                };
-            }
-            else if (username.Equals("") && password.Equals(""))
-            {
-                return new Result() 
-                {                  
-                    issuccess = false, 
-                    code = MessageCode.BlankUserNamePassword 
-                };
-            }
-            else
-            {
-                return new Result() 
-                { 
-                    issuccess = false, 
-                    code = MessageCode.WrongUserNamePassword 
-                };
-            }
+            return username.Equals("admin") && password.Equals("admin")
+                ? new Result
+                {
+                    Issuccess = true,
+                    Code = MessageCode.Success
+                }
+                : (username.Equals("") && password.Equals("")
+                    ? new Result
+                    {
+                        Issuccess = false,
+                        Code = MessageCode.BlankUserNamePassword
+                    }
+                    : new Result
+                    {
+                        Issuccess = false,
+                        Code = MessageCode.WrongUserNamePassword
+                    });
         }
 
         public string ShowMessage(MessageCode code)
         {
-            string message = string.Empty;
-
             switch (code)
             {
                 case MessageCode.Success:
-                    message = "Successfully logged in";
-                    break;
-
+                    return "Successfully logged in";
                 case MessageCode.BlankUserNamePassword :
-                    message = "UserName and Password must be entered";
-                    break;
-
+                    return "UserName and Password must be entered";
                 case MessageCode.WrongUserNamePassword :
-                    message = "Cannot logged in";
-                    break;
-
-                default:
-                    break;
+                    return "Cannot logged in";
             }
 
-            return message;
+            return null;
         }
     }
 }
