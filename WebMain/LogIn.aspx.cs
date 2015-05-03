@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using WebMain;
 using WebMain.Core;
 
 namespace WebMain
 {
-    public partial class LogIn : System.Web.UI.Page
+    public partial class LogIn : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,18 +13,11 @@ namespace WebMain
 
         protected void btnOK_Click(object sender, EventArgs e)
         {
-            UserLogin obj = new UserLogin();
+            var obj = new UserLogin();
 
-            Result result = obj.LogIn(txtUserName.Text, txtPassword.Text);
+            var result = obj.LogIn(txtUserName.Text, txtPassword.Text);
 
-            if (result.issuccess)
-            {
-                lblMessage.Text = obj.ShowMessage(result.code);
-            }
-            else
-            {
-                lblMessage.Text = obj.ShowMessage(result.code);
-            }
+            lblMessage.Text = obj.ShowMessage(result.Code);
         }
     }
 }
